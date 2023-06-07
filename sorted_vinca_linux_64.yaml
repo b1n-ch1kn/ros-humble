@@ -5,7 +5,7 @@ conda_index:
   - robostack.yaml
   - packages-ignore.yaml
 
-build_number: 4
+build_number: 3
 
 mutex_package: ros2-distro-mutex 0.3 humble
 
@@ -13,7 +13,7 @@ skip_all_deps: false
 
 # If full rebuild, the build number of the existing package has
 # to match the selected build number for skipping
-full_rebuild: false
+full_rebuild: true
 
 packages_skip_by_deps:
   # - nav2-rotation-shim-controller
@@ -231,22 +231,36 @@ packages_select_by_deps:
   # - slider-publisher
   # - soccer-interfaces
   # - topic-statistics-demo
+
+  # needs babeltools and lttng-python on conda-forge
   # - smacc2
+
+  # Not yet working
   # - tvm-vendor
   # - zenoh-bridge-dds
   # - velodyne-simulator
   # - wiimote
   # - depthai
+
   # - ros1-bridge
+
+  # Used to work, now needs fixes
   # - webots-ros2-abb
   # - webots-ros2-core
   # - webots-ros2-demos
   # - webots-ros2-examples
   # - webots-ros2-tutorials
   # - webots-ros2-ur-e-description
+
+  # needs a rebuild of ros-noetic first
   # - ros1-rosbag-storage-vendor
+
+  # build locally but not on CI; for now uploaded from local
   # - popf
+  
   # - sbg-driver
+
+  # working
   # - rosbridge-msgs
   # - rosbridge-library
   # - picknik-ament-copyright
@@ -392,6 +406,8 @@ packages_select_by_deps:
   # - urg-c
   # - urg-node-msgs
   # - wiimote-msgs
+
+  # Don't work yet
   # - run-moveit-cpp
   # - rc-dynamics-api
   # - rosbag2-bag-v2-plugins
