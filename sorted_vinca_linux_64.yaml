@@ -1,0 +1,399 @@
+ros_distro: humble
+
+# mapping for package keys
+conda_index:
+  - robostack.yaml
+  - packages-ignore.yaml
+
+build_number: 4
+
+mutex_package: ros2-distro-mutex 0.3 humble
+
+skip_all_deps: false
+
+# If full rebuild, the build number of the existing package has
+# to match the selected build number for skipping
+full_rebuild: false
+
+packages_skip_by_deps:
+  # - nav2-rotation-shim-controller
+  # - rviz
+  # - diagnostic_updater
+  - cartographer
+  - octomap
+
+packages_remove_from_deps:
+  - cartographer
+  - octomap
+  - warehouse_ros_mongo
+  # - stage-ros
+  # - python_qt_binding
+  # - joint_state_publisher_gui
+  # - stage
+
+skip_existing:
+  - https://conda.anaconda.org/robostack-staging/
+
+packages_select_by_deps:
+  - ros-workspace
+  - ros-environment
+  - ament-cmake
+  - ros-base
+  - desktop
+  - navigation2
+  - moveit
+  - graph-msgs
+  - nav2-bringup
+  - webots-ros2
+  - turtlebot3
+  - desktop-full
+  - apriltag
+  - turtlebot3-fake-node
+  - ur
+  - ublox
+  - robot-localization
+  - topic-tools
+  - stubborn-buddies
+  - teleop-tools
+  - udp-driver
+  - urdf-tutorial
+  - apex-test-tools
+  - ublox-dgnss
+  - velodyne-description
+  - velodyne
+  - visp
+  - apex-containers
+  - bno055
+  - aws-robomaker-small-warehouse-world
+  - avt-vimba-camera
+  - ros-ign
+  - spacenav
+  - system-modes
+  - tf-transformations
+  - turtle-tf2-cpp
+  - turtle-tf2-py
+  - ros2controlcli
+  - robot-controllers
+  - ros2-control
+  - ros2-controllers
+  - control-toolbox
+  - joint-trajectory-controller
+  - gazebo-dev
+  - gazebo-plugins
+  - gazebo-ros
+  - gazebo-ros-pkgs
+  - turtlebot3-gazebo
+  - turtlebot3-simulations
+  - rqt
+  - rqt-image-overlay
+  - rqt-moveit
+  - rqt-robot-dashboard
+  - rqt-robot-monitor
+  - rqt-robot-steering
+  - joint-state-broadcaster
+  - joint-state-publisher
+  - xacro
+  - image-pipeline
+  - image-view
+  - moveit-resources
+  - moveit-ros-perception
+  - moveit-runtime
+  - moveit-servo
+  - moveit-visual-tools
+  - bond-core
+  - camera-calibration
+  - camera-calibration-parsers
+  - camera-info-manager
+  - slam-toolbox
+  - foxglove-bridge
+  - ament-cmake-nose
+  - geographic-info
+  - geodesy
+  - plotjuggler
+  - plotjuggler-ros
+  - ublox-dgnss-node
+  - ublox-ubx-interfaces
+  - sdformat-test-files
+  - sdformat-urdf
+  - behaviortree-cpp-v3
+  - webots-ros2-epuck
+  - webots-ros2-importer
+  - webots-ros2-msgs
+  - webots-ros2-tesla
+  - webots-ros2-tiago
+  - webots-ros2-turtlebot
+  - webots-ros2-universal-robot
+  - ros-ign-bridge
+  - ros-ign-image
+  - ruckig
+  - cartographer-ros
+  - ackermann-msgs
+  - ros-ign-gazebo
+  - ros-ign-interfaces
+  - vision-msgs
+  - ament-clang-format
+  - ament-cmake-pclint
+  - ament-pclint
+  - ament-pycodestyle
+  - backward-ros
+  - cartographer-ros-msgs
+  - compressed-depth-image-transport
+  - compressed-image-transport
+  - depth-image-proc
+  - diagnostic-updater
+  - dynamixel-sdk
+  - filters
+  - geographic-msgs
+  - hls-lfcd-lds-driver
+  - image-common
+  - image-proc
+  - image-publisher
+  - image-rotate
+  - joy-teleop
+  - key-teleop
+  - pcl-ros
+  - perception-pcl
+  - plotjuggler-msgs
+  - realtime-tools
+  - sensor-msgs-py
+  - stereo-image-proc
+  - stubborn-buddies-msgs
+  - system-modes-msgs
+  - teleop-tools-msgs
+  - ublox-gps
+  - ublox-msgs
+  - ublox-serialization
+  - ublox-ubx-msgs
+  - udp-msgs
+  - vision-opencv
+  - osrf-testing-tools-cpp
+
+  # ---unsupported packages below---
+
+  # - test-bond
+  # - rtabmap
+  # - rosbridge-suite
+  # - control-box-rst
+  # - zmqpp-vendor
+  # - fogros2
+  # - foxglove-msgs
+  # - four-wheel-steering-msgs
+  # - geometry-tutorials
+  # - gps-tools
+  # - gps-umd
+  # - gpsd-client
+  # - gscam
+  # - v4l2-camera
+  # - usb-cam
+  # - zbar-ros
+  # - vitis-common
+  # - urg-node
+  # - ur-bringup
+  # - twist-mux
+  # - ros2acceleration
+  # - ros2launch-security
+  # - ros2launch-security-examples
+  # - ros2nodl
+  # - ros2trace
+  # - rosapi
+  # - rosbag2-storage-mcap
+  # - rosbag2-performance-benchmarking
+  # - can-msgs
+  # - cartographer-rviz
+  # - cascade-lifecycle-msgs
+  # - chomp-motion-planner
+  # - color-names
+  # - cudnn-cmake-module
+  # - rmf-demos
+  # - rmf-traffic-msgs
+  # - rmf-demos-maps
+  # - rmf-demos-tasks
+  # - adaptive-component
+  # - async-web-server-cpp
+  # - boost-geometry-util
+  # - ros2-ouster
+  # - ros2-socketcan
+  # - ros2trace-analysis
+  # - rplidar-ros
+  # - rot-conv
+  # - rt-manipulators
+  # - rt-manipulators-examples
+  # - acado-vendor
+  # - automotive-autonomy-msgs
+  # - automotive-navigation-msgs
+  # - automotive-platform-msgs
+  # - autoware-auto-msgs
+  # - dolly
+  # - rviz-imu-plugin
+  # - self-test
+  # - serial-driver
+  # - simple-launch
+  # - slider-publisher
+  # - soccer-interfaces
+  # - topic-statistics-demo
+  # - smacc2
+  # - tvm-vendor
+  # - zenoh-bridge-dds
+  # - velodyne-simulator
+  # - wiimote
+  # - depthai
+  # - ros1-bridge
+  # - webots-ros2-abb
+  # - webots-ros2-core
+  # - webots-ros2-demos
+  # - webots-ros2-examples
+  # - webots-ros2-tutorials
+  # - webots-ros2-ur-e-description
+  # - ros1-rosbag-storage-vendor
+  # - popf
+  # - sbg-driver
+  # - rosbridge-msgs
+  # - rosbridge-library
+  # - picknik-ament-copyright
+  # - nodl-to-policy
+  # - plansys2-bt-actions
+  # - plansys2-terminal
+  # - nav2-system-tests
+  # - lanelet2
+  # - plansys2-bringup
+  # - octovis
+  # - mrpt2
+  # - fmi-adapter-examples
+  # - menge-vendor
+  # - openvslam
+  # - ign-rviz
+  # - ign-rviz-common
+  # - ign-rviz-plugins
+  # - libphidget22
+  # - nao-lola
+  # - phidgets-accelerometer
+  # - phidgets-analog-inputs
+  # - phidgets-api
+  # - phidgets-digital-inputs
+  # - phidgets-digital-outputs
+  # - phidgets-drivers
+  # - phidgets-gyroscope
+  # - phidgets-high-speed-encoder
+  # - phidgets-ik
+  # - phidgets-magnetometer
+  # - phidgets-motors
+  # - phidgets-spatial
+  # - phidgets-temperature
+  # - soccer-marker-generation
+  # - ament-clang-tidy
+  # - ament-cmake-catch2
+  # - ament-cmake-clang-tidy
+  # - ament-cmake-clang-format
+  # - ament-cmake-mypy
+  # - ament-cmake-pycodestyle
+  # - ament-cmake-pyflakes
+  # - ament-download
+  # - ament-pyflakes
+  # - ament-nodl
+  # - diagnostic-aggregator
+  # - domain-bridge
+  # - dynamic-edt-3d
+  # - dynamixel-sdk-custom-interfaces
+  # - dynamixel-sdk-examples
+  # - examples-rclcpp-cbg-executor
+  # - examples-rclpy-guard-conditions
+  # - examples-rclpy-pointcloud-publisher
+  # - examples-tf2-py
+  # - gps-msgs
+  # - grbl-msgs
+  # - grbl-ros
+  # - gurumdds-cmake-module
+  # - ifm3d-core
+  # - joy-linux
+  # - laser-proc
+  # - launch-system-modes
+  # - lgsvl-msgs
+  # - libmavconn
+  # - librealsense2
+  # - marti-can-msgs
+  # - marti-common-msgs
+  # - marti-dbw-msgs
+  # - marti-nav-msgs
+  # - marti-perception-msgs
+  # - marti-sensor-msgs
+  # - marti-status-msgs
+  # - marti-visualization-msgs
+  # - mavlink
+  # - mavros
+  # - mavros-msgs
+  # - mouse-teleop
+  # - nao-button-sim
+  # - nao-command-msgs
+  # - nao-sensor-msgs
+  # - nav2-gazebo-spawner
+  # - nmea-msgs
+  # - nodl-python
+  # - ntpd-driver
+  # - osqp-vendor
+  # - ouster-msgs
+  # - phidgets-msgs
+  # - plansys2-core
+  # - plansys2-lifecycle-manager
+  # - plansys2-msgs
+  # - plansys2-pddl-parser
+  # - point-cloud-msg-wrapper
+  # - qpoases-vendor
+  # - qt-gui-app
+  # - qt-gui-core
+  # - quaternion-operation
+  # - radar-msgs
+  # - rc-common-msgs
+  # - rcdiscover
+  # - rc-genicam-api
+  # - rclc
+  # - rclc-examples
+  # - rclc-lifecycle
+  # - rclc-parameter
+  # - rclcpp-cascade-lifecycle
+  # - rcl-logging-log4cxx
+  # - rcl-logging-noop
+  # - rc-reason-clients
+  # - rc-reason-msgs
+  # - rcss3d-agent
+  # - realsense2-camera
+  # - realsense2-camera-msgs
+  # - realsense2-description
+  # - rmf-battery
+  # - rmf-building-map-msgs
+  # - rmf-building-map-tools
+  # - rmf-charger-msgs
+  # - rmf-cmake-uncrustify
+  # - rmf-dispenser-msgs
+  # - rmf-door-msgs
+  # - rmf-fleet-msgs
+  # - rmf-ingestor-msgs
+  # - rmf-lift-msgs
+  # - rmf-task-msgs
+  # - rmf-traffic
+  # - rmf-traffic-editor
+  # - rmf-traffic-editor-assets
+  # - rmf-traffic-editor-test-maps
+  # - rmf-utils
+  # - rmf-visualization-msgs
+  # - rmf-workcell-msgs
+  # - rmw-gurumdds-cpp
+  # - rmw-gurumdds-shared-cpp
+  # - rosidl-generator-dds-idl
+  # - run-move-group
+  # - soccer-vision-msgs
+  # - system-modes-examples
+  # - test-apex-test-tools
+  # - test-launch-system-modes
+  # - tracetools-analysis
+  # - tracetools-launch
+  # - tracetools-read
+  # - tracetools-test
+  # - tracetools-trace
+  # - urg-c
+  # - urg-node-msgs
+  # - wiimote-msgs
+  # - run-moveit-cpp
+  # - rc-dynamics-api
+  # - rosbag2-bag-v2-plugins
+
+patch_dir: patch

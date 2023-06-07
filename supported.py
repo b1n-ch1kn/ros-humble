@@ -3,10 +3,10 @@ import yaml
 import os
 
 # get the file's current directory
-cwd = os.path.dirname(os.path.realpath(__file__))
+cwd = os.path.dirname(os.path.realpath(__file__)) + "/"
 
 PLATFORM = 'linux_64'
-file = cwd + '/vinca_' + PLATFORM + '.yaml'
+file = cwd + 'vinca_' + PLATFORM + '.yaml'
 
 
 # load a text file of ROS2 packages query them against a list of supported packages
@@ -47,7 +47,7 @@ with open(file, 'r') as f:
 
 
 # load csv file of supported packages
-avail = pd.read_csv(cwd + '/table.csv', delimiter='|')
+avail = pd.read_csv(cwd + 'table.csv', delimiter='|')
 
 """
 each line is in the format:
@@ -68,7 +68,7 @@ supported_linux = [x.strip(' ') for x in supported_linux]
 
 # write the supported packages to a copy of vinca_yaml file
 # replace between 'packages_selected_from_deps:' and 'patch_dir: patch'
-with open('vinca_linux_64.yaml', 'w') as f:
+with open(cwd + 'sorted_vinca_linux_64.yaml', 'w') as f:
     # write the first part of the file
     for line in vinca_yaml[:vinca_yaml.index('packages_select_by_deps:')+1]:
         f.write(line + '\n')
